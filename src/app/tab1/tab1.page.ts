@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'app-tab1',
@@ -8,5 +9,17 @@ import { Component } from '@angular/core';
 export class Tab1Page {
 
   constructor() {}
+
+  localNotification() {
+    Plugins.LocalNotifications.schedlule({
+      notifications: [
+        {
+          id: 1,
+          title: 'ようこそ',
+          body: 'Ionic Frameworkへ',
+        }
+      ]
+    });
+  }
 
 }
