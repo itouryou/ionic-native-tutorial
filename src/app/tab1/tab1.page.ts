@@ -11,12 +11,14 @@ export class Tab1Page {
   constructor() {}
 
   localNotification() {
-    Plugins.LocalNotifications.schedlule({
+    Plugins.LocalNotifications.schedule({
       notifications: [
         {
           id: 1,
           title: 'ようこそ',
           body: 'Ionic Frameworkへ',
+          schedule: { at: new Date(Date.now() + 1000 *5) },
+          sound: 'normail'
         }
       ]
     });
